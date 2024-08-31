@@ -1,15 +1,9 @@
 import { useState } from "react";
+import { v4 } from "uuid";
 
 import ContactsList from "./ContactsList";
 
 import inputs from "../constants/inputs";
-
-const inputs = [
-  { type: "text", name: "name", placeholder: "Name" },
-  { type: "text", name: "lastname", placeholder: "Last Name" },
-  { type: "email", name: "email", placeholder: "Email" },
-  { type: "number", name: "phone", placeholder: "Phone" },
-];
 
 function Contacts() {
   const [contacts, setContacts] = useState([]);
@@ -39,13 +33,20 @@ function Contacts() {
       return;
     }
     setAlert("");
-    setContacts((contacts) => [...Contacts, contact]);
+    const newContact = { ...contact, id: v4() };
+    setContacts((contacts) => [...contacts, newContact]);
     setContact({
+      id: "",
       name: "",
       lastName: "",
       email: "",
       phone: "",
     });
+  };
+
+  const deleteHandler = (id) => {
+    const newContacts = contacts.filter((contact) => contact.id !== id);
+    setContacts(newContacts);
   };
 
   return (
@@ -64,8 +65,8 @@ function Contacts() {
 
         <button onClick={addHandler}>Add Contact</button>
       </div>
-      <div>{alert && <p>{alert} </p>}</div>
-      <ContactsList contacts={contacts} />
+      <div>{alert && <p>{alert}</p>}</div>
+      <ContactsList contacts={contacts} deleteHandler={deleteHandler} />
     </div>
   );
 }
