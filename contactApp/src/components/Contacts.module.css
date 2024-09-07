@@ -26,7 +26,7 @@
   font-size: 1rem;
 }
 
-.form button {
+.addContactStyle {
   width: calc(90% + 20px);
   height: 40px;
   padding: 10px;
@@ -40,7 +40,7 @@
   transition: 0.2s all ease-in-out;
 }
 
-.form button:hover {
+.addContactStyle:hover {
   box-shadow: #0c2ad487 0px 7px 29px 0px;
 }
 
@@ -56,6 +56,25 @@
   padding: 10px;
   border-radius: 10px;
 }
+
+.bulkDeleteButton {
+  width: calc(90% + 20px);
+  height: 40px;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  background-color: #fe3030;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: 0.2s all ease-in-out;
+}
+
+.bulkDeleteButton:hover {
+  box-shadow: #d4160c87 0px 7px 29px 0px;
+}
+
 
 @media (max-width: 500px) {
   .form input {

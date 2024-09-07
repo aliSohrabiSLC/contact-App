@@ -5,7 +5,7 @@ function Header() {
     <div className={styles.container}>
       <h1>Contact App</h1>
       <p>
-        <a href="https://google.com">Go To Google</a> | Rract.js Full Course
+        <a href="https://github.com/aliSohrabiSLC/contact-App">My GitHub</a> | Rract.js Full Course
       </p>
     </div>
   );
